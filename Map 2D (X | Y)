@@ -1,0 +1,30 @@
+
+    #define SIZE 64
+
+    sf::Sprite sprite;
+
+    std::vector<sf::Sprite> Map;
+    std::vector<sf::Sprite> Build;
+
+
+    for(int x = 0; x < SIZE; x++)
+    {
+        for(int y = 0; y < SIZE; y++)
+        {
+            int tab = (SIZE * x) + y;
+            Map.push_back(sprite);
+            Map[(tab)].setTexture(texture);
+            Map[(tab)].setPosition(x * 32 , y * 32);
+        }
+    }
+    
+    //boucle
+    
+    window.clear();
+    
+    for( int i = 0 ; i < SIZE * SIZE ; i ++)
+            {
+                window.draw(Map[(i)]);
+            }
+            
+    window.display();
